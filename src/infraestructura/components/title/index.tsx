@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Translate from '../../components/translate/index';
 
 interface IProps {
   text: string;
@@ -8,7 +9,7 @@ interface IProps {
 const Title = ({ text, style }: IProps) => {
   return (
     <h1 className="main-title" style={style}>
-      {text}
+      {Translate('main-title', false)}
     </h1>
   );
 };
