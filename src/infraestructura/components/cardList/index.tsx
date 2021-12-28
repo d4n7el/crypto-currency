@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { ICryptoCurrency } from '../../dto/cryptoCurrencyDTO';
-import { Title, SubTitle } from '../title';
-import { Card } from 'antd';
-import { List, message } from 'antd';
+import React, { useState } from 'react';
+import { List, Avatar, Card } from 'antd';
 import VirtualList from 'rc-virtual-list';
 
 interface Iprops {
@@ -10,9 +7,18 @@ interface Iprops {
   data: any;
   containerHeight: number;
   loading: boolean;
+  setCurrent: any;
+  currentID: number;
 }
 
-const CardList = ({ loadMore, data, containerHeight, loading }: Iprops) => {
+const CardList = ({
+  loadMore,
+  data,
+  containerHeight,
+  loading,
+  setCurrent,
+  currentID,
+}: Iprops) => {
   const onScroll = (e: any) => {
     if (e.target.scrollHeight - e.target.scrollTop === containerHeight) {
       loadMore();
@@ -22,7 +28,7 @@ const CardList = ({ loadMore, data, containerHeight, loading }: Iprops) => {
   return (
     <>
       <div>
-        <Card style={{ width: 300, marginTop: 16 }} loading={loading}>
+        <Card style={{ width: 300 }} loading={loading}>
           <div className="gradient-first"></div>
           <div className="gradient-second"></div>
           <div className="gradient-third"></div>
@@ -31,14 +37,22 @@ const CardList = ({ loadMore, data, containerHeight, loading }: Iprops) => {
               data={data}
               height={containerHeight}
               itemHeight={47}
-              itemKey="email"
+              itemKey="id"
               onScroll={onScroll}
             >
               {(item) => (
-                <List.Item key={item.name}>
+                <List.Item
+                  key={item.id}
+                  onClick={() => {
+                    setCurrent(item.id);
+                  }}
+                >
+                  <Avatar className={currentID === item.id ? `bg-1` : 'bg-4'}>
+                    {item.name.split('')[0]}
+                  </Avatar>
                   <List.Item.Meta
-                    title={<a href="https://ant.design">{item.nameid}</a>}
-                    description={item.price_usd}
+                    title={<p>{item.nameid}</p>}
+                    description={`USD: ${item.price_usd}`}
                   />
                 </List.Item>
               )}

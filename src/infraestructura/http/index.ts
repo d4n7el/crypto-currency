@@ -19,7 +19,9 @@ const get = async <T>(path: string, token: string): Promise<T> => {
     `${BASE_URL}${path}`,
     await getHeaders(token)
   );
-  return data.data.data as T;
+  console.log(data.data);
+
+  return data.data.data || (data.data as T);
 };
 
 export const http = {

@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { getCryptoCurrencyService } from '../../../domain/services/cryptoCurrency.service';
+import { getCryptoCurrenciesService } from '../../../domain/services/cryptoCurrency.service';
 import { ICryptoCurrency } from '../../dto/cryptoCurrencyDTO';
 import { Title, SubTitle } from '../title';
 import CardList from '../cardList';
+import CryptoCurrencyView from './cryptoCurrencyView';
 
 const ListCurrencyes = () => {
   const [cryptoCurrency, setCryptoCurrency] = useState<ICryptoCurrency[]>([]);
   const [loading, setLoading] = useState(true);
   const [start, setStart] = useState(0);
+  const [currentCurrencyID, setCurrentCurrencyID] = useState<number>(0);
 
   useEffect(() => {
-    get_data();
+    get_currencies();
   }, [start]);
 
-  const get_data = async () => {
-    const data = await getCryptoCurrencyService(start);
+  const get_currencies = async () => {
+    const data = await getCryptoCurrenciesService(start);
     setCryptoCurrency([...cryptoCurrency, ...data]);
     setLoading(false);
   };
@@ -38,7 +40,10 @@ const ListCurrencyes = () => {
           }}
           data={cryptoCurrency}
           containerHeight={400}
+          setCurrent={setCurrentCurrencyID}
+          currentID={currentCurrencyID}
         />
+        <CryptoCurrencyView id={currentCurrencyID} />
       </div>
     </>
   );

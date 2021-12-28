@@ -4,6 +4,49 @@ body {
   background-color: $color-background;
 }
 
+.bg-1,
+.bg-2,
+.bg-3,
+.bg-4,
+.bg-5,
+.bg-6,
+.bg-7,
+.bg-8 {
+  transition: ease-in-out 0.5s;
+}
+
+.bg-1 {
+  background-color: $color-first;
+}
+
+.bg-2 {
+  background-color: $color-second;
+}
+
+.bg-3 {
+  background-color: $color-third;
+}
+
+.bg-4 {
+  background-color: $color-fourth;
+}
+
+.bg-5 {
+  background-color: $color-fifth;
+}
+
+.bg-6 {
+  background-color: $color-sixth;
+}
+
+.bg-7 {
+  background-color: $color-seventh;
+}
+
+.bg-8 {
+  background-color: $color-heigth;
+}
+
 ul.ant-menu-overflow {
   background-color: transparent;
   border-bottom: 0px;
@@ -59,6 +102,8 @@ div.content-card-list {
     border-radius: 10px;
     padding: 10px;
     overflow: hidden;
+    margin-right: 10px;
+    margin-top: 26px;
 
     div.ant-card-body {
       border-radius: 10px;
@@ -102,15 +147,45 @@ div.content-card-list {
     li.ant-list-item {
       padding-left: 20px;
       h4.ant-list-item-meta-title {
-        a {
+        p {
           color: $color-heigth;
-          font-weight: 500;
+          font-weight: 600;
           font-size: 18px;
         }
       }
       div.ant-list-item-meta-description {
         color: $color-fourth;
+        font-weight: 300;
       }
+      span.ant-avatar {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+div.content-card-detail {
+  div.avatar-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    span.ant-avatar-string {
+    }
+  }
+  div.ant-card-meta-title {
+    color: rgba($color: $color-heigth, $alpha: 0.9);
+  }
+  div.ant-card-meta-description {
+    color: rgba($color: $color-second, $alpha: 0.9);
+  }
+  div.info-detail {
+    display: flex;
+    justify-content: space-between;
+    strong,
+    p {
+      margin: 0px;
+      color: $color-heigth;
     }
   }
 }
