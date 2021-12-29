@@ -170,8 +170,7 @@ div.content-card-detail {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    span.ant-avatar-string {
-    }
+    position: relative;
   }
   div.ant-card-meta-title {
     color: rgba($color: $color-heigth, $alpha: 0.9);
@@ -187,5 +186,28 @@ div.content-card-detail {
       margin: 0px;
       color: $color-heigth;
     }
+    p {
+      color: $color-second;
+    }
+  }
+}
+
+div.content-card-detail {
+  div.opaque-default {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+
+    backdrop-filter: blur(40px);
+  }
+  div.gradient-first {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+  }
+  span.ant-avatar {
+    z-index: 5;
   }
 }

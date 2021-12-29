@@ -32,14 +32,16 @@ const CryptoCurrencyView = ({ id }: IProps) => {
       {currency ? (
         <Card style={{ width: 340 }} loading={loading}>
           <div className="avatar-head">
+            <div className="gradient-first"></div>
+            <div className="opaque-default"></div>
             <Avatar size={42} className={'bg-4'}>
               {t(currency.symbol)}
             </Avatar>
           </div>
-
+          <hr></hr>
+          <br></br>
           <Meta title={currency.name} />
           <Meta description={`${t('rank')}: ${currency.rank}`} />
-          <hr></hr>
           <br></br>
 
           {Object.keys(currency).map((key) => {

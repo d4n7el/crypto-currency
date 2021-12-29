@@ -4,6 +4,7 @@ import { ICryptoCurrency } from '../../dto/cryptoCurrencyDTO';
 import { Title, SubTitle } from '../title';
 import CardList from '../cardList';
 import CryptoCurrencyView from './cryptoCurrencyView';
+import { UseLanguage } from '../../context/LanguageContext';
 
 const ListCurrencyes = () => {
   const [cryptoCurrency, setCryptoCurrency] = useState<ICryptoCurrency[]>([]);
