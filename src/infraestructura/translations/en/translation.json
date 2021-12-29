@@ -1,4 +1,23 @@
 {
   "main-title": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aper",
-  "language": "Lenguage"
+  "language": "Lenguage",
+  "id": "Id",
+  "symbol": "Symbol",
+  "name": "Name",
+  "nameid": "Name ID",
+  "rank": "Rank",
+  "price_usd": "Price USD",
+  "percent_change_24h": "Percent Change 24h",
+  "percent_change_1h": "Percent Change 1h",
+  "percent_change_7d": "Percent Change 7d",
+  "market_cap_usd": "market cap usd",
+  "volume24": "volume24",
+  "volume24_native": "volume24_native",
+  "csupply": "csupply",
+  "price_btc": "Price BTC",
+  "tsupply": "tsupply",
+  "msupply": "msupply",
+  "nav-link-1": "Navigation One",
+  "nav-link-2": "Navigation Two",
+  "nav-link-3": "Navigation Three"
 }

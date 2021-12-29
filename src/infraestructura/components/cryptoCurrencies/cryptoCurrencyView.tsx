@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getCryptoCurrencyService } from '../../../domain/services/cryptoCurrency.service';
 import { Card, Avatar } from 'antd';
 import { ICryptoCurrency } from '../../dto/cryptoCurrencyDTO';
-import { log } from 'console';
-
+import { useTranslation } from 'react-i18next';
 const { Meta } = Card;
 
 interface IProps {
@@ -13,6 +12,7 @@ interface IProps {
 const CryptoCurrencyView = ({ id }: IProps) => {
   const [currency, setCurrency] = useState<ICryptoCurrency>();
   const [loading, setLoading] = useState<boolean>(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setLoading(true);
@@ -27,27 +27,25 @@ const CryptoCurrencyView = ({ id }: IProps) => {
     }
   };
 
-  console.log({ currency });
-
   return (
     <div className="content-card-detail">
       {currency ? (
         <Card style={{ width: 340 }} loading={loading}>
           <div className="avatar-head">
             <Avatar size={42} className={'bg-4'}>
-              {currency.symbol}
+              {t(currency.symbol)}
             </Avatar>
           </div>
 
           <Meta title={currency.name} />
-          <Meta description={`Rank: ${currency.rank}`} />
+          <Meta description={`${t('rank')}: ${currency.rank}`} />
           <hr></hr>
           <br></br>
 
           {Object.keys(currency).map((key) => {
             return (
-              <div className="info-detail">
-                <strong>{key}:</strong>
+              <div key={key} className="info-detail">
+                <strong>{t(key)}:</strong>
                 <p>{currency[key as keyof ICryptoCurrency]}</p>
               </div>
             );

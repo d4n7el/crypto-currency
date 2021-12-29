@@ -27,13 +27,13 @@ const MenuApp = () => {
     >
       <Menu.Item key="item-bussiness">Crypto</Menu.Item>
       <Menu.Item key="item-charts" icon={<AreaChartOutlined />}>
-        Navigation One
+        {Translate('nav-link-1', false)}
       </Menu.Item>
       <Menu.Item key="item-two" icon={<PlusOutlined />}>
-        Navigation Two
+        {Translate('nav-link-2', false)}
       </Menu.Item>
       <Menu.Item key="item-logout" icon={<LogoutOutlined />}>
-        Navigation three
+        {Translate('nav-link-3', false)}
       </Menu.Item>
       <SubMenu
         key="SubMenu"

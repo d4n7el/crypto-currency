@@ -4,14 +4,12 @@ import { ICryptoCurrency } from '../../dto/cryptoCurrencyDTO';
 import { Title, SubTitle } from '../title';
 import CardList from '../cardList';
 import CryptoCurrencyView from './cryptoCurrencyView';
-import { UseLanguage } from '../../context/LanguageContext';
 
 const ListCurrencyes = () => {
   const [cryptoCurrency, setCryptoCurrency] = useState<ICryptoCurrency[]>([]);
   const [loading, setLoading] = useState(true);
   const [start, setStart] = useState(0);
   const [currentCurrencyID, setCurrentCurrencyID] = useState<number>(0);
-  const { language } = UseLanguage();
 
   useEffect(() => {
     get_currencies();
