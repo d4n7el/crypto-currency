@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Translate from '../../translate/index';
+import Translate from '../translate/index';
 
 interface IProps {
   text: string;

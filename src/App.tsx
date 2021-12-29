@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import RoutesApp from './infraestructura/routes/index';
+import RoutesApp from './routes/index';
 import MenuApp from './infraestructura/components/menu';
 
 import 'antd/dist/antd.css';
-import './infraestructura/theme/base.scss';
+import './theme//base.scss';
 
 function App() {
   return (

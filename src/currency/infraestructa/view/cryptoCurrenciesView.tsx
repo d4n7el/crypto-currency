@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { getCryptoCurrenciesService } from '../../../domain/services/cryptoCurrency.service';
-import { ICryptoCurrency } from '../../dto/cryptoCurrencyDTO';
-import { Title, SubTitle } from '../title';
-import CardList from '../cardList';
+import { useEffect, useState } from 'react';
+import { getCryptoCurrenciesService } from '../../domain/services/cryptoCurrency.service';
+import { ICryptoCurrency } from '../dto/cryptoCurrencyDTO';
+import { Title, SubTitle } from '../../../infraestructura/components/title';
+import CardList from '../../../infraestructura/components/cardList';
 import CryptoCurrencyView from './cryptoCurrencyView';
-import { UseLanguage } from '../../context/LanguageContext';
 
 const ListCurrencyes = () => {
   const [cryptoCurrency, setCryptoCurrency] = useState<ICryptoCurrency[]>([]);

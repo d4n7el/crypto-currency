@@ -1,5 +1,5 @@
-import { getCryptoCurrencies } from '../../infraestructura/repositories/cryptoCurrency.repository';
-import { ICryptoCurrency } from '../../infraestructura/dto/cryptoCurrencyDTO';
+import { getCryptoCurrencies } from '../../infraestructa/repositories/cryptoCurrency.repository';
+import { ICryptoCurrency } from '../../infraestructa/dto/cryptoCurrencyDTO';
 
 export const getCryptoCurrenciesService = async (
   start: number

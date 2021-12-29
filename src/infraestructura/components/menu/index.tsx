@@ -8,8 +8,8 @@ import {
   CheckOutlined,
   MinusOutlined,
 } from '@ant-design/icons';
-import Translate from '../../translate';
-import { UseLanguage } from '../../context/LanguageContext';
+import Translate from '../translate';
+import { UseLanguage } from '../../../context/LanguageContext';
 
 const { SubMenu } = Menu;
 

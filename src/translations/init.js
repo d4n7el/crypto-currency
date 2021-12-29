@@ -1,6 +1,6 @@
 import i18n from 'i18next';
-import translation_es from '../translations/es/translation.json';
-import translation_en from '../translations/en/translation.json';
+import translation_es from './es/translation.json';
+import translation_en from './en/translation.json';
 import { DEFAULT_LANGUAGE, LIST_LANGUAGES } from '../utils/const';
 
 export const i18nInit = () => {

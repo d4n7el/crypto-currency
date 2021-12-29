@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { LanguageProvider } from './infraestructura/context/LanguageContext';
+import { LanguageProvider } from './context/LanguageContext';
 import { I18nextProvider } from 'react-i18next';
-import { i18nInit } from './infraestructura/translations/init';
+import { i18nInit } from './translations/init';
 
 ReactDOM.render(
   <React.StrictMode>

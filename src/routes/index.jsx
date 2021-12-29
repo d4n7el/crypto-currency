@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import ListCurrencyes from '../components/cryptoCurrencies/cryptoCurrenciesView';
+import ListCurrencyes from '../currency/infraestructa/view/cryptoCurrenciesView';
 
 const RoutesApp = () => {
   return (

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { getCryptoCurrencyService } from '../../../domain/services/cryptoCurrency.service';
+import { useEffect, useState } from 'react';
+import { getCryptoCurrencyService } from '../../domain/services/cryptoCurrency.service';
 import { Card, Avatar } from 'antd';
-import { ICryptoCurrency } from '../../dto/cryptoCurrencyDTO';
+import { ICryptoCurrency } from '../dto/cryptoCurrencyDTO';
 import { useTranslation } from 'react-i18next';
 const { Meta } = Card;
 
