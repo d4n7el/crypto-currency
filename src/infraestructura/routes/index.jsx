@@ -5,6 +5,7 @@ const RoutesApp = () => {
   return (
     <Routes>
       <Route exact path="/crypto-currencies" element={<ListCurrencyes />} />
+      <Route exact path="/" element={<ListCurrencyes />} />
     </Routes>
   );
 };
