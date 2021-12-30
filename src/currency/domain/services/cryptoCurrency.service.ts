@@ -1,14 +1,14 @@
-import { getCryptoCurrencies } from '../../infraestructa/repositories/cryptoCurrency.repository';
-import { ICryptoCurrency } from '../../infraestructa/dto/cryptoCurrencyDTO';
+import { getCryptoCurrencies } from '../../infraestructa/repositories/currency.repository';
+import { ICurrency } from '../../infraestructa/dto/currencyDTO';
 
 export const getCryptoCurrenciesService = async (
   start: number
-): Promise<ICryptoCurrency[]> => {
+): Promise<ICurrency[]> => {
   return await getCryptoCurrencies(`tickers/?start=${start}&limit=100`, '');
 };
 
 export const getCryptoCurrencyService = async (
   id: number
-): Promise<ICryptoCurrency[]> => {
+): Promise<ICurrency[]> => {
   return await getCryptoCurrencies(`ticker/?id=${id}`, '');
 };

@@ -1,26 +1,27 @@
 import { useEffect, useState } from 'react';
 import { getCryptoCurrenciesService } from '../../domain/services/cryptoCurrency.service';
-import { ICryptoCurrency } from '../dto/cryptoCurrencyDTO';
+import { ICurrency } from '../dto/currencyDTO';
 import { Title, SubTitle } from '../../../infraestructura/components/title';
 import CardList from '../../../infraestructura/components/cardList';
-import CryptoCurrencyView from './cryptoCurrencyView';
+import Currency from '../container/currency';
 
-const ListCurrencyes = () => {
-  const [cryptoCurrency, setCryptoCurrency] = useState<ICryptoCurrency[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [start, setStart] = useState(0);
-  const [currentCurrencyID, setCurrentCurrencyID] = useState<number>(0);
+interface IProps {
+  loading: boolean;
+  setStart: any;
+  start: number;
+  currencyCollection: Array<ICurrency>;
+  setCurrentCurrencyID: any;
+  currentCurrencyID: number;
+}
 
-  useEffect(() => {
-    get_currencies();
-  }, [start]);
-
-  const get_currencies = async () => {
-    const data = await getCryptoCurrenciesService(start);
-    setCryptoCurrency([...cryptoCurrency, ...data]);
-    setLoading(false);
-  };
-
+const ListCurrencies = ({
+  loading,
+  setStart,
+  start,
+  currencyCollection,
+  setCurrentCurrencyID,
+  currentCurrencyID,
+}: IProps) => {
   return (
     <>
       <Title
@@ -38,15 +39,15 @@ const ListCurrencyes = () => {
           loadMore={() => {
             setStart(start + 100);
           }}
-          data={cryptoCurrency}
+          data={currencyCollection}
           containerHeight={400}
           setCurrent={setCurrentCurrencyID}
           currentID={currentCurrencyID}
         />
-        <CryptoCurrencyView id={currentCurrencyID} />
+        <Currency id={currentCurrencyID} />
       </div>
     </>
   );
 };
 
-export default ListCurrencyes;
+export default ListCurrencies;

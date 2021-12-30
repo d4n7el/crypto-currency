@@ -1,32 +1,18 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getCryptoCurrencyService } from '../../domain/services/cryptoCurrency.service';
 import { Card, Avatar } from 'antd';
-import { ICryptoCurrency } from '../dto/cryptoCurrencyDTO';
-import { useTranslation } from 'react-i18next';
+import { ICurrency } from '../dto/currencyDTO';
 const { Meta } = Card;
 
 interface IProps {
   id: number;
+  currency: ICurrency;
+  loading: boolean;
 }
 
-const CryptoCurrencyView = ({ id }: IProps) => {
-  const [currency, setCurrency] = useState<ICryptoCurrency>();
-  const [loading, setLoading] = useState<boolean>(true);
+const DetailCurrency = ({ id, currency, loading }: IProps) => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    setLoading(true);
-    get_currency();
-  }, [id]);
-
-  const get_currency = async () => {
-    if (id) {
-      const data = await getCryptoCurrencyService(id);
-      setCurrency(data[0]);
-      setLoading(false);
-    }
-  };
-
   return (
     <div className="content-card-detail">
       {currency ? (
@@ -48,7 +34,7 @@ const CryptoCurrencyView = ({ id }: IProps) => {
             return (
               <div key={key} className="info-detail">
                 <strong>{t(key)}:</strong>
-                <p>{currency[key as keyof ICryptoCurrency]}</p>
+                <p>{currency[key as keyof ICurrency]}</p>
               </div>
             );
           })}
@@ -58,4 +44,4 @@ const CryptoCurrencyView = ({ id }: IProps) => {
   );
 };
 
-export default CryptoCurrencyView;
+export default DetailCurrency;

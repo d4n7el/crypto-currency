@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import ListCurrencyes from '../currency/infraestructa/view/cryptoCurrenciesView';
+import Currencies from '../currency/infraestructa/container/currencies';
 
 const RoutesApp = () => {
   return (
     <Routes>
-      <Route exact path="/crypto-currencies" element={<ListCurrencyes />} />
-      <Route exact path="/" element={<ListCurrencyes />} />
+      <Route exact path="/crypto-currencies" element={<Currencies />} />
+      <Route exact path="/" element={<Currencies />} />
     </Routes>
   );
 };
