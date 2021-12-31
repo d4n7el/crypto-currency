@@ -14,7 +14,7 @@ const DetailCurrency = ({ currency, loading, viewAvatar }: IProps) => {
   return (
     <div className="content-card-detail">
       {currency ? (
-        <Card style={{ width: 340 }} loading={loading}>
+        <Card loading={loading}>
           <div className="avatar-head">
             <div className="gradient-first"></div>
             <div className="opaque-default"></div>

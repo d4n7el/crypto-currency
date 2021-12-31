@@ -52,7 +52,10 @@ ul.ant-menu-overflow {
   border-bottom: 0px;
   li {
     span {
-      color: $color-second;
+      color: $color-second !important;
+      a {
+        color: $color-second !important;
+      }
     }
     &:hover {
       &:after {
@@ -93,78 +96,86 @@ small.sub-title {
   display: inline-block;
 }
 
-div.content-card-list {
+div.currency-list {
   display: flex;
   justify-content: center;
-  div.ant-card {
-    background-color: transparent;
-    border: 1px solid rgba($color: $color-heigth, $alpha: 0.1);
-    border-radius: 10px;
-    padding: 10px;
-    overflow: hidden;
-    margin-right: 10px;
-    margin-top: 26px;
+  div.container-card-list {
+    width: 50%;
+    div.content-card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
-    div.ant-card-body {
-      border-radius: 10px;
-      overflow: hidden;
-      padding: 0px;
-    }
-    div.rc-virtual-list-holder-inner {
-      backdrop-filter: blur(40px);
-      padding: 10px;
-      li.ant-list-item {
-        border-bottom: 1px solid rgba($color: $color-fourth, $alpha: 0.1);
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-      }
-    }
-    div.rc-virtual-list-holder-inner {
-      overflow: hidden;
-    }
-    div.gradient-first {
-      content: '';
-      width: 100px;
-      height: 100px;
-      background-color: rgba($color: $color-second, $alpha: 0.2);
-      position: absolute;
-      border-radius: 50%;
-    }
-    div.gradient-second {
-      content: '';
-      width: 50px;
-      height: 50px;
-      background-color: rgba($color: $color-third, $alpha: 0.4);
-      position: absolute;
-      border-radius: 50% 0;
-      margin-top: 300px;
-    }
-    div.gradient-third {
-      content: '';
-      width: 150px;
-      height: 150px;
-      background-color: rgba($color: $color-sixth, $alpha: 0.2);
-      position: absolute;
-      border-radius: 50% 0 19 4;
-      right: 10px;
-      margin-top: 150px;
-    }
-    li.ant-list-item {
-      padding-left: 20px;
-      h4.ant-list-item-meta-title {
-        p {
-          color: $color-heigth;
-          font-weight: 600;
-          font-size: 18px;
-          margin-bottom: 0px;
+      div.ant-card {
+        background-color: transparent;
+        border: 1px solid rgba($color: $color-heigth, $alpha: 0.1);
+        border-radius: 10px;
+        padding: 10px;
+        overflow: hidden;
+        margin-right: 10px;
+        margin-top: 26px;
+
+        div.ant-card-body {
+          border-radius: 10px;
+          overflow: hidden;
+          padding: 0px;
         }
-      }
-      div.ant-list-item-meta-description {
-        color: $color-fourth;
-        font-weight: 300;
-      }
-      span.ant-avatar {
-        margin-right: 2rem;
+        div.rc-virtual-list-holder-inner {
+          backdrop-filter: blur(40px);
+          padding: 10px;
+          li.ant-list-item {
+            border-bottom: 1px solid rgba($color: $color-fourth, $alpha: 0.1);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        }
+        div.rc-virtual-list-holder-inner {
+          overflow: hidden;
+        }
+        div.gradient-first {
+          content: '';
+          width: 100px;
+          height: 100px;
+          background-color: rgba($color: $color-second, $alpha: 0.2);
+          position: absolute;
+          border-radius: 50%;
+        }
+        div.gradient-second {
+          content: '';
+          width: 50px;
+          height: 50px;
+          background-color: rgba($color: $color-third, $alpha: 0.4);
+          position: absolute;
+          border-radius: 50% 0;
+          margin-top: 300px;
+        }
+        div.gradient-third {
+          content: '';
+          width: 150px;
+          height: 150px;
+          background-color: rgba($color: $color-sixth, $alpha: 0.2);
+          position: absolute;
+          border-radius: 50% 0 19 4;
+          right: 10px;
+          margin-top: 150px;
+        }
+        li.ant-list-item {
+          padding-left: 20px;
+          h4.ant-list-item-meta-title {
+            p {
+              color: $color-heigth;
+              font-weight: 600;
+              font-size: 18px;
+              margin-bottom: 0px;
+            }
+          }
+          div.ant-list-item-meta-description {
+            color: $color-fourth;
+            font-weight: 300;
+          }
+          span.ant-avatar {
+            margin-right: 2rem;
+          }
+        }
       }
     }
   }
@@ -215,5 +226,18 @@ div.content-card-detail {
   }
   span.ant-avatar {
     z-index: 5;
+  }
+}
+
+div.content-page-not-found {
+  div.ant-result-title {
+    color: rgba($color: $color-fourth, $alpha: 0.8);
+    font-weight: 900;
+    font-size: 63px;
+  }
+  div.ant-result-subtitle {
+    color: rgba($color: $color-fourth, $alpha: 0.7);
+    font-weight: 100;
+    font-size: 43px;
   }
 }

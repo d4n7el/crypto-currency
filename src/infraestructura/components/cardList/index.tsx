@@ -30,7 +30,7 @@ const CardList = ({
   return (
     <>
       <div>
-        <Card style={{ width: 300 }} loading={loading}>
+        <Card loading={loading}>
           <div className="gradient-first"></div>
           <div className="gradient-second"></div>
           <div className="gradient-third"></div>

@@ -35,19 +35,23 @@ const ListCurrencies = ({
         style={{}}
       />
 
-      <div className="content-card-list">
-        <CardList
-          loading={loading}
-          loadMore={() => {
-            setStart(start + 100);
-          }}
-          data={currencyCollection}
-          containerHeight={400}
-          setCurrent={setCurrentCurrencyID}
-          currentID={currentCurrencyID}
-          viewAvatar={viewAvatar}
-        />
-        <Currency id={currentCurrencyID} />
+      <div className="currency-list">
+        <div className="container-card-list">
+          <div className="content-card-list">
+            <CardList
+              loading={loading}
+              loadMore={() => {
+                setStart(start + 100);
+              }}
+              data={currencyCollection}
+              containerHeight={400}
+              setCurrent={setCurrentCurrencyID}
+              currentID={currentCurrencyID}
+              viewAvatar={viewAvatar}
+            />
+            <Currency id={currentCurrencyID} />
+          </div>
+        </div>
       </div>
     </>
   );
