@@ -4,6 +4,7 @@ import { ICurrency } from '../dto/currencyDTO';
 import { Title, SubTitle } from '../../../infraestructura/components/title';
 import CardList from '../../../infraestructura/components/cardList';
 import Currency from '../container/currency';
+import { mapCurrencyToListCard } from '../../../utils/mapCurrencyToListCard';
 
 interface IProps {
   loading: boolean;
@@ -43,7 +44,7 @@ const ListCurrencies = ({
               loadMore={() => {
                 setStart(start + 100);
               }}
-              data={currencyCollection}
+              data={mapCurrencyToListCard(currencyCollection)}
               containerHeight={400}
               setCurrent={setCurrentCurrencyID}
               currentID={currentCurrencyID}

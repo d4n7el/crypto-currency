@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { List, Avatar, Card } from 'antd';
 import VirtualList from 'rc-virtual-list';
+import { ICardList } from '../../interface/cardList';
 
 interface Iprops {
   loadMore: any;
-  data: any;
+  data: ICardList[];
   containerHeight: number;
   loading: boolean;
   setCurrent: any;
@@ -49,17 +50,21 @@ const CardList = ({
                 onClick={() => {
                   setCurrent(item.id);
                 }}
-                data-testid={`nameid_${item.nameid}`}
+                data-testid={`nameid_${item.title}`}
               >
                 {viewAvatar && (
-                  <Avatar className={currentID === item.id ? `bg-1` : 'bg-4'}>
-                    {item.name.split('')[0]}
+                  <Avatar
+                    className={
+                      currentID.toString() === item.id ? `bg-1` : 'bg-4'
+                    }
+                  >
+                    {item.avatarLetter}
                   </Avatar>
                 )}
 
                 <List.Item.Meta
-                  title={<p>{item.nameid}</p>}
-                  description={`USD: ${item.price_usd}`}
+                  title={<p>{item.title}</p>}
+                  description={`USD: ${item.description}`}
                 />
               </List.Item>
             )}
