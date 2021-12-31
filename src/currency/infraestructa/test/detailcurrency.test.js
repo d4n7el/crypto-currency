@@ -3,6 +3,14 @@ import { render, screen } from '@testing-library/react';
 import DetailCurrency from '../view/detailCurrency';
 import { getCryptoCurrencyService } from '../../domain/services/cryptoCurrency.service';
 
+jest.mock('react-i18next', () => ({
+  useTranslation: () => {
+    return {
+      t: (str) => str,
+    };
+  },
+}));
+
 const fakeCurrency = {
   id: '90',
   symbol: 'BTC',
