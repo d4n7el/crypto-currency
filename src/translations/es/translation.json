@@ -20,5 +20,6 @@
   "nav-link-1": "Link 1",
   "nav-link-2": "Link 2",
   "nav-link-3": "Link 3",
-  "home": "Inicio"
+  "home": "Inicio",
+  "msg404": "La página solicitada no está disponible"
 }
