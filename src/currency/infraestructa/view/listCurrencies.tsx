@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { getCryptoCurrenciesService } from '../../domain/services/cryptoCurrency.service';
 import { ICurrency } from '../dto/currencyDTO';
 import { Title, SubTitle } from '../../../infraestructura/components/title';
 import CardList from '../../../infraestructura/components/cardList';

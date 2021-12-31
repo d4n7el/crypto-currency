@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { List, Avatar, Card } from 'antd';
 import VirtualList from 'rc-virtual-list';
 import { ICardList } from '../../interface/cardList';
