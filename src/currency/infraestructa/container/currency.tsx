@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getCryptoCurrencyService } from '../../domain/services/cryptoCurrency.service';
-import { Card } from 'antd';
 import { ICurrency } from '../dto/currencyDTO';
 import DetailCurrency from '../view/detailCurrency';
-const { Meta } = Card;
 
 interface IProps {
   id: number;
@@ -27,7 +25,7 @@ const Currency = ({ id }: IProps) => {
   };
 
   return currency ? (
-    <DetailCurrency id={id} currency={currency} loading={loading} />
+    <DetailCurrency currency={currency} loading={loading} viewAvatar={true} />
   ) : null;
 };
 

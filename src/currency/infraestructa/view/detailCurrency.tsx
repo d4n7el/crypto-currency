@@ -1,17 +1,15 @@
-import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getCryptoCurrencyService } from '../../domain/services/cryptoCurrency.service';
 import { Card, Avatar } from 'antd';
 import { ICurrency } from '../dto/currencyDTO';
 const { Meta } = Card;
 
 interface IProps {
-  id: number;
   currency: ICurrency;
   loading: boolean;
+  viewAvatar: boolean;
 }
 
-const DetailCurrency = ({ id, currency, loading }: IProps) => {
+const DetailCurrency = ({ currency, loading, viewAvatar }: IProps) => {
   const { t } = useTranslation();
   return (
     <div className="content-card-detail">
@@ -20,11 +18,12 @@ const DetailCurrency = ({ id, currency, loading }: IProps) => {
           <div className="avatar-head">
             <div className="gradient-first"></div>
             <div className="opaque-default"></div>
-            <Avatar size={42} className={'bg-4'}>
-              {t(currency.symbol)}
-            </Avatar>
+            {viewAvatar && (
+              <Avatar size={42} className={'bg-4'}>
+                {t(currency.symbol)}
+              </Avatar>
+            )}
           </div>
-          <hr></hr>
           <br></br>
           <Meta title={currency.name} />
           <Meta description={`${t('rank')}: ${currency.rank}`} />

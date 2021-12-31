@@ -12,6 +12,7 @@ interface IProps {
   currencyCollection: Array<ICurrency>;
   setCurrentCurrencyID: any;
   currentCurrencyID: number;
+  viewAvatar: boolean;
 }
 
 const ListCurrencies = ({
@@ -21,6 +22,7 @@ const ListCurrencies = ({
   currencyCollection,
   setCurrentCurrencyID,
   currentCurrencyID,
+  viewAvatar,
 }: IProps) => {
   return (
     <>
@@ -43,6 +45,7 @@ const ListCurrencies = ({
           containerHeight={400}
           setCurrent={setCurrentCurrencyID}
           currentID={currentCurrencyID}
+          viewAvatar={viewAvatar}
         />
         <Currency id={currentCurrencyID} />
       </div>

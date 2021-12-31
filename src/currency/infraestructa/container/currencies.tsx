@@ -27,6 +27,7 @@ const Currencies = () => {
       currencyCollection={currencyCollection}
       setCurrentCurrencyID={setCurrentCurrencyID}
       currentCurrencyID={currentCurrencyID}
+      viewAvatar={true}
     />
   );
 };
