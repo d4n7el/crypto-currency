@@ -10,6 +10,7 @@ import {
 } from '@ant-design/icons';
 import Translate from '../translate';
 import { UseLanguage } from '../../../context/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const { SubMenu } = Menu;
 
@@ -27,13 +28,19 @@ const MenuApp = () => {
     >
       <Menu.Item key="item-bussiness">Crypto</Menu.Item>
       <Menu.Item key="item-charts" icon={<AreaChartOutlined />}>
-        {Translate('nav-link-1', false)}
+        <Link className="ant-menu-title-content" to={'/'}>
+          {Translate('home', false)}
+        </Link>
       </Menu.Item>
       <Menu.Item key="item-two" icon={<PlusOutlined />}>
-        {Translate('nav-link-2', false)}
+        <Link className="ant-menu-title-content" to={'/'}>
+          {Translate('nav-link-2', false)}
+        </Link>
       </Menu.Item>
       <Menu.Item key="item-logout" icon={<LogoutOutlined />}>
-        {Translate('nav-link-3', false)}
+        <Link className="ant-menu-title-content" to={'/nav-link-3'}>
+          {Translate('nav-link-3', false)}
+        </Link>
       </Menu.Item>
       <SubMenu
         key="SubMenu"
