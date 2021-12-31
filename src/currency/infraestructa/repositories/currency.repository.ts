@@ -1,4 +1,4 @@
-import { http } from '../http/index';
+import { http } from '../../../infraestructura/http/index';
 import { ICurrency } from '../dto/currencyDTO';
 
 export const getCryptoCurrencies = async (
